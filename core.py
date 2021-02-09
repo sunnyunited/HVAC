@@ -24,7 +24,7 @@ class Cal:
             self.mps = round((self.FPS/3.281),2)
             return self.mps
         if self.FPM != None:
-            self.mpm = round(((self.FPM/60)/3.281),2)
+            self.mps = round(((self.FPM/60)/3.281),2)
             return self.mps
         elif self.mps != None:
             self.FPS = round((self.mps*3.281),2)
