@@ -26,7 +26,7 @@ if 'FPS' in option:
     x = st.slider('Velocity',min_value=0.0, max_value=15.0, value=2.0, step=0.2)
     x = st.number_input('',value=x)
     if input_unit == 'FPS': p1 = core.Cal(FPS=x)
-    if input_unit == 'FPM': p1 = core.Cal(FPM=x)
+    elif input_unit == 'FPM': p1 = core.Cal(FPM=x)
     elif input_unit == 'm/s': p1 = core.Cal(mps=x)
     result=p1.velocity_conv()
     st.markdown('### Result')
