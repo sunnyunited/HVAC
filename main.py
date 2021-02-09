@@ -12,13 +12,13 @@ st.sidebar.markdown('Coming from a metric world, I struggled (and still'
          ' struggling). That\'s why I create this for myself.')
 
 option_df = pd.DataFrame()
-option_df['option']= ['Temperature','FPS','CFM','testing','Pressure','GPM','Energy']
+option_df['option']= ['Temperature','Velocity','CFM','testing','Pressure','GPM','Energy']
 
 #option = st.sidebar.selectbox('',option_df['option'])
 st.markdown('# Select required section(s):')
 option = st.multiselect('',option_df['option'])
 
-if 'FPS' in option:
+if 'Velocity' in option:
     st.markdown('## Simple velocity conversation')
     st.markdown('### Input')
     input_unit = st.selectbox('Select input velocity unit', options=['FPS','FPM','m/s'])
