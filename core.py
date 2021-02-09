@@ -4,6 +4,7 @@ class Cal:
         self.F = kwargs.get('F')
         self.C = kwargs.get('C')
         self.FPS = kwargs.get('FPS')
+        self.FPM = kwargs.get('FPM')
         self.mps = kwargs.get('mps')
         self.CFM = kwargs.get('CFM')
         self.lps = kwargs.get('lps')
@@ -21,6 +22,9 @@ class Cal:
     def velocity_conv(self):
         if self.FPS != None:
             self.mps = round((self.FPS/3.281),2)
+            return self.mps
+        if self.FPM != None:
+            self.mpm = round(((self.FPM/60)/3.281),2)
             return self.mps
         elif self.mps != None:
             self.FPS = round((self.mps*3.281),2)
