@@ -125,6 +125,7 @@ if 'Pressure' in option:
     st.markdown('### Result')
     st.write(x,str(input_unit),' is equal to',result,str(output_unit)+'.',)
 
+'''
 if 'testing' in option:
 
     st.write('F to C \n '
@@ -147,6 +148,7 @@ if 'testing' in option:
              ' BTU/h MBH W Ton\n'
              'in.w.g 100ft pa/m '
              ' inch reduction ratio')
+'''
 
     df = pd.DataFrame({
     'first column': [1, 2, 3, 4]
