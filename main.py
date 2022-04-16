@@ -125,33 +125,32 @@ if 'Pressure' in option:
     st.markdown('### Result')
     st.write(x,str(input_unit),' is equal to',result,str(output_unit)+'.',)
 
-'''
-if 'testing' in option:
+if __name__ == '__main__':
+    if 'testing' in option:
 
-    st.write('F to C \n '
-             'FPS FPM m/s\n'
-             ' CFM l/s \n '
-             ' BTU/h MBH W Ton\n'
-             'in.w.g 100ft pa/m '
-             ' inch reduction ratio')
+        st.write('F to C \n '
+                 'FPS FPM m/s\n'
+                 ' CFM l/s \n '
+                 ' BTU/h MBH W Ton\n'
+                 'in.w.g 100ft pa/m '
+                 ' inch reduction ratio')
 
-    if st.checkbox('Show dataframe'):
-        chart_data = pd.DataFrame(
-            np.random.randn(20, 3),
-            columns=['a', 'b', 'c'])
+        if st.checkbox('Show dataframe'):
+            chart_data = pd.DataFrame(
+                np.random.randn(20, 3),
+                columns=['a', 'b', 'c'])
 
-        st.line_chart(chart_data)
+            st.line_chart(chart_data)
 
-    st.write('F to C \n '
-             'FPS FPM m/s\n'
-             ' CFM l/s \n '
-             ' BTU/h MBH W Ton\n'
-             'in.w.g 100ft pa/m '
-             ' inch reduction ratio')
+        st.write('F to C \n '
+                 'FPS FPM m/s\n'
+                 ' CFM l/s \n '
+                 ' BTU/h MBH W Ton\n'
+                 'in.w.g 100ft pa/m '
+                 ' inch reduction ratio')
 
 
-    df = pd.DataFrame({
-    'first column': [1, 2, 3, 4]
-    })
-    st.write(df)
-    '''
+        df = pd.DataFrame({
+        'first column': [1, 2, 3, 4]
+        })
+        st.write(df)
