@@ -60,7 +60,7 @@ if 'Temperature' in option:
     elif input_unit == '°C': p1 = core.Cal(C=x)
     result=p1.temp_conv()
     st.markdown('### Result')
-    st.write(x,'&#176;'+str(input_unit),' is equal to',result,'&#176;'+str(output_unit)+'.',)
+    st.write(x,str(input_unit),' is equal to',result,str(output_unit)+'.',)
 
 
 if 'Pressure' in option:
