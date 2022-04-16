@@ -14,7 +14,7 @@ st.sidebar.markdown('Coming from a metric world, I struggled (and still'
          ' struggling). That\'s why I create this for myself.')
 
 option_df = pd.DataFrame()
-option_df['option']= ['Temperature','Velocity','CFM','Pressure','GPM','Energy']
+option_df['option']= ['Temperature','Velocity','CFM','Pressure','GPM(WIP)','Energy(WIP)']
 
 #option = st.sidebar.selectbox('',option_df['option'])
 st.markdown('# Select required section(s):')
