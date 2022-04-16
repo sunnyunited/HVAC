@@ -10,6 +10,8 @@ class Cal:
         self.lps = kwargs.get('lps')
         self.inwg = kwargs.get('inwg')
         self.pa = kwargs.get('pa')
+        self.inwg_100ft = kwargs.get('inwg_100ft')
+        self.pa_m = kwargs.get('pa_m')
 
     def temp_conv(self):
         if self.F != None:
@@ -45,6 +47,13 @@ class Cal:
         elif self.pa != None:
             self.inwg = round((self.pa/248.84),2)
             return self.inwg
+        elif self.inwg_100ft != None:
+            self.pa_m = round((self.inwg_100ft*98.1),2)
+            return self.pa_m
+        elif self.pa_m != None:
+            self.inwg_100ft = round((self.pa_m/98.1),2)
+            return self.inwg_100ft
+
 
 if __name__ =='__main__':
     p1 = Cal(F=20)

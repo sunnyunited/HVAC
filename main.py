@@ -93,16 +93,20 @@ if 'Pressure' in option:
         start_v = 0.6
         step_v = 0.1
         factor = 1000
-    '''
-    if input_unit == 'ft. w.g.':
+
     if input_unit == 'in. w.g. per 100 ft':
+        cal_unit = 'Pa'
+
     if input_unit == 'Pa/m':
-    '''
+
     #x = st.slider('Velocity',min_value=0.0, max_value=15.0, value=2.0, step=0.2)
     x = st.slider(input_unit,min_value=min_v, max_value=max_v, value=start_v, step=step_v)
     x = st.number_input('',value=x)
     if cal_unit == 'Pa': p1 = core.Cal(pa=x*factor)
     elif cal_unit == 'in. w.g.': p1 = core.Cal(inwg=x*factor)
+    elif cal_unit == 'in. w.g. per 100 ft': p1 = core.Cal(inwg_100ft=x * factor)
+    elif cal_unit == 'Pa/m': p1 = core.Cal(pa_m=x*factor)
+
     result=p1.pressure_conv()
     st.markdown('### Result')
     st.write(x,str(input_unit),' is equal to',result,str(output_unit)+'.',)
