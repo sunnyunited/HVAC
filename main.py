@@ -52,12 +52,12 @@ if 'CFM' in option:
 if 'Temperature' in option:
     st.markdown('## Simple temperature conversation')
     st.markdown('### Input')
-    input_unit = st.selectbox('Select input temperature unit', options=['F','C'])
-    output_unit = 'F' if input_unit != 'F' else 'C'
+    input_unit = st.selectbox('Select input temperature unit', options=['°F','°C'])
+    output_unit = '°F' if input_unit != '°F' else '°C'
     x = st.slider('Temperature',min_value=-50, max_value=250, value=68, step=1)
     x = st.number_input('',value=x)
-    if input_unit == 'F': p1 = core.Cal(F=x)
-    elif input_unit == 'C': p1 = core.Cal(C=x)
+    if input_unit == '°F': p1 = core.Cal(F=x)
+    elif input_unit == '°C': p1 = core.Cal(C=x)
     result=p1.temp_conv()
     st.markdown('### Result')
     st.write(x,'&#176;'+str(input_unit),' is equal to',result,'&#176;'+str(output_unit)+'.',)
