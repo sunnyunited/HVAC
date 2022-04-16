@@ -70,8 +70,8 @@ if 'Pressure' in option:
                               options=['in. w.g.','Pa','kPa','ft. w.g.',
                                        'in. w.g. per 100 ft','Pa/m'])
     if input_unit =='in. w.g.':
-        cal_unit = 'in. w.g.'
-        output_unit = 'Pa'
+        cal_unit = 'inwg'
+        output_unit = "Pa" #display only
         min_v = 0.5
         max_v = 1.0
         start_v = 0.6
@@ -79,8 +79,8 @@ if 'Pressure' in option:
         factor = 1
 
     if input_unit =='Pa':
-        cal_unit = 'Pa'
-        output_unit = 'in.w.g.'
+        cal_unit = 'pa'
+        output_unit = "in. w.g." #display only
         min_v = 0
         max_v = 1000
         start_v = 200
@@ -88,8 +88,8 @@ if 'Pressure' in option:
         factor = 1
 
     if input_unit == 'kPa':
-        cal_unit = 'Pa'
-        output_unit = 'in. w.g.'
+        cal_unit = 'pa'
+        output_unit = "in. w.g." #display only
         min_v = 0.5
         max_v = 1.0
         start_v = 0.6
@@ -98,7 +98,7 @@ if 'Pressure' in option:
 
     if input_unit == 'in. w.g. per 100 ft':
         cal_unit = 'inwg_100ft'
-        output_unit = 'pa_m'
+        output_unit = "Pa/m" #display only
         min_v = 0.5
         max_v = 1.0
         start_v = 0.6
@@ -107,7 +107,7 @@ if 'Pressure' in option:
 
     if input_unit == 'Pa/m':
         cal_unit = 'pa_m'
-        output_unit = 'inwg_100ft'
+        output_unit = "in. w.g. per 100 ft" #display only
         min_v = 0.5
         max_v = 1.0
         start_v = 0.6
@@ -117,10 +117,10 @@ if 'Pressure' in option:
     #x = st.slider('Velocity',min_value=0.0, max_value=15.0, value=2.0, step=0.2)
     x = st.slider(input_unit,min_value=min_v, max_value=max_v, value=start_v, step=step_v)
     x = st.number_input('',value=x)
-    if cal_unit == 'Pa': p1 = core.Cal(pa=x*factor)
-    elif cal_unit == 'in. w.g.': p1 = core.Cal(inwg=x*factor)
-    elif cal_unit == 'in. w.g. per 100 ft': p1 = core.Cal(inwg_100ft=x * factor)
-    elif cal_unit == 'Pa/m': p1 = core.Cal(pa_m=x*factor)
+    if cal_unit == 'pa': p1 = core.Cal(pa=x*factor)
+    elif cal_unit == 'inwg': p1 = core.Cal(inwg=x*factor)
+    elif cal_unit == 'inwg_100ft': p1 = core.Cal(inwg_100ft=x*factor)
+    elif cal_unit == 'pa_m': p1 = core.Cal(pa_m=x*factor)
 
     result=p1.pressure_conv()
     st.markdown('### Result')
