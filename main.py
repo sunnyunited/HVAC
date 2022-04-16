@@ -148,9 +148,10 @@ if 'testing' in option:
              ' BTU/h MBH W Ton\n'
              'in.w.g 100ft pa/m '
              ' inch reduction ratio')
-'''
+
 
     df = pd.DataFrame({
     'first column': [1, 2, 3, 4]
     })
     st.write(df)
+    '''
