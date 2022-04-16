@@ -14,7 +14,7 @@ st.sidebar.markdown('Coming from a metric world, I struggled (and still'
          ' struggling). That\'s why I create this for myself.')
 
 option_df = pd.DataFrame()
-option_df['option']= ['Temperature','Velocity','CFM','testing','Pressure','GPM','Energy']
+option_df['option']= ['Temperature','Velocity','CFM','Pressure','GPM','Energy']
 
 #option = st.sidebar.selectbox('',option_df['option'])
 st.markdown('# Select required section(s):')
@@ -114,7 +114,6 @@ if 'Pressure' in option:
         step_v = 0.1
         factor = 1
 
-    #x = st.slider('Velocity',min_value=0.0, max_value=15.0, value=2.0, step=0.2)
     x = st.slider(input_unit,min_value=min_v, max_value=max_v, value=start_v, step=step_v)
     x = st.number_input('',value=x)
     if cal_unit == 'pa': p1 = core.Cal(pa=x*factor)
