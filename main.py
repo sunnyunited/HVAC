@@ -97,9 +97,22 @@ if 'Pressure' in option:
         factor = 1000
 
     if input_unit == 'in. w.g. per 100 ft':
-        cal_unit = 'Pa'
+        cal_unit = 'inwg_100ft'
+        output_unit = 'pa_m'
+        min_v = 0.5
+        max_v = 1.0
+        start_v = 0.6
+        step_v = 0.1
+        factor = 1
 
     if input_unit == 'Pa/m':
+        cal_unit = 'pa_m'
+        output_unit = 'inwg_100ft'
+        min_v = 0.5
+        max_v = 1.0
+        start_v = 0.6
+        step_v = 0.1
+        factor = 1
 
     #x = st.slider('Velocity',min_value=0.0, max_value=15.0, value=2.0, step=0.2)
     x = st.slider(input_unit,min_value=min_v, max_value=max_v, value=start_v, step=step_v)
