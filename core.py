@@ -48,10 +48,10 @@ class Cal:
             self.inwg = round((self.pa/248.84),2)
             return self.inwg
         elif self.inwg_100ft != None:
-            self.pa_m = round((self.inwg_100ft*98.1),2)
+            self.pa_m = round((self.inwg_100ft*8.17),2)
             return self.pa_m
         elif self.pa_m != None:
-            self.inwg_100ft = round((self.pa_m/98.1),2)
+            self.inwg_100ft = round((self.pa_m/8.17),2)
             return self.inwg_100ft
 
 
