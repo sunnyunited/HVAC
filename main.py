@@ -1,12 +1,10 @@
 import streamlit as st
+
 # To make things easier later, we're also importing numpy and pandas for
 # working with sample data.
-import numpy as np
-import pandas as pd
 import conv_core
 import duct_core
 import rots
-from math import sqrt, pi
 
 st.set_page_config(page_title="HVAC", page_icon=None, layout="wide", initial_sidebar_state="expanded", menu_items=None)
 
@@ -181,9 +179,9 @@ def waterflow_rot():
     st.write("Max PD: ", rots.pipemain_pd_i, unit_hl(rots.unitpipe_pd_i), ", or ",
              rots.pipemain_pd_m, unit_hl(rots.unitpipe_pd_m))
     st.write("Max Velocity: ", rots.pipemain_v_i, unit_hl(rots.unitpipe_v_i), '(',
-             rots.pipeheader_v_i, unit_hl(rots.unitpipe_pd_i), "in header)", ", or ",
+             rots.pipeheader_v_i, unit_hl(rots.unitpipe_v_i), "in header)", ", or ",
              rots.pipemain_v_m, unit_hl(rots.unitpipe_v_m), "(",
-             rots.pipeheader_v_m, unit_hl(rots.unitpipe_pd_m), "in header)")
+             rots.pipeheader_v_m, unit_hl(rots.unitpipe_v_m), "in header)")
 
     st.write("##### Pipe Branches")
     st.write("Max PD: ", rots.pipebranch_pd_i, unit_hl(rots.unitpipe_pd_i), ", or ",
